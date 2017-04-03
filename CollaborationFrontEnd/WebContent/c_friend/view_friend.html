@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			.list-content{
+			 min-height:300px;
+			}
+			.list-content .list-group .title{
+			  background:#07525f;
+			  border:2px solid #DDDDDD;
+			  font-weight:bold;
+			  color:#FFFFFF;
+			}
+			.list-group-item img {
+				height:80px; 
+				width:80px;
+			}
+
+			.jumbotron .btn {
+				padding: 5px 5px !important;
+				font-size: 12px !important;
+			}
+			.prj-name {
+				color:#07525f;    
+			}
+			.break{
+				width:100%;
+				margin:20px;
+			}
+			.name {
+				color:#07525f;    
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="container bootstrap snippet">
+			<div class="header">
+				<h3 class="text-muted prj-name" style="color:#07525f !important;">
+					<span class="fa fa-users fa-2x principal-title"></span>
+					Friend zone
+				</h3>
+			</div>
+			<div class="jumbotron list-content">
+				<ul class="list-group">
+					<li href="#" class="list-group-item title">
+						Your friend zone
+						<div class="row">
+							<div class="col-sm-7">
+							</div>
+							<div class="col-sm-2">
+								<h4>Search for friend:</h4>
+							</div>
+							<div class="col-sm-3">
+								<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search" ng-model="sear_text">
+								<div class="input-group-btn">
+								  <button class="btn btn-default" type="submit" style="height:34px !important;">
+									<i class="glyphicon glyphicon-search"></i>
+								  </button>
+								</div>
+							  </div>
+							</div>
+						</div>
+					</li>
+					<div ng-controller="FriendController as ctrl">
+						<div ng-repeat="friend in ctrl.friends" ng-show="friend.username==currentUser.username">
+								<li href="#" class="list-group-item text-left">
+									<label class="name">
+										<h3>{{friend.friendid}}</h3><br>
+									</label>
+									<label class="pull-right">
+										<a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" href="#" title="Delete"></a>
+										<a  class="btn btn-info  btn-xs glyphicon glyphicon glyphicon-comment" href="#/chat_forum" title="Send message"></a>
+									</label>
+									<div class="break"></div>
+								</li>
+						</div>
+					</div>
+				</ul>
+			</div>                                                                                
+		</div> 
+	</body>
+</html>

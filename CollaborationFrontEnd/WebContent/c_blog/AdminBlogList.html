@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+  <center><h2>Blog Requests</h2></center>
+  <div class="row">
+	<div class="col-sm-1">
+	</div>
+	<div class="col-sm-10 table-responsive" ng-controller="BlogController as ctrl">
+		<table class="table table-hover">
+			<thead>
+			  <tr>
+				<th>BLOG TITLE</th>
+				<th>DESCRIPTION</th>
+				<th>DATE AND TIME</th>
+				<th>USERNAME</th>
+				<th>ACCEPT / REJECT</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr ng-repeat="b in blogs" ng-show="b.status=='N'">
+				<td>{{b.blog_title}}</td>
+				<td>{{b.description}}</td>
+				<td>{{b.date_time}}</td>
+				<td>{{b.username}}</td>
+				<td>
+					<button type="button" class="btn btn-success btn-xs" ng-click="ctrl.approveBlog(b.blog_id)">Accept</button>
+					<button type="button" class="btn btn-danger btn-xs" ng-click="ctrl.rejectBlog(b.blog_id)">Reject</button>
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
+	</div>
+	<div class="col-sm-1">
+	</div>
+  </div>
+</div>
+
+</body>
+</html>

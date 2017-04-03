@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<br><br>
+<center><h1>Rejected Request List</h1></center><br>
+<div class="container-fluid">
+	<div class="row table-responsive">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10">
+			<table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>USERNAME</th>
+				<th>FIRST NAME</th>
+				<th>LAST NAME</th>
+				<th>GENDER</th>
+				<th>MAIL ID</th>
+				<th>STATUS</th>
+				<th>WANT TO ACCEPT</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr ng-repeat="u in users" ng-if="u.status=='R'">
+		      	<div >
+					<td>{{u.username}}</td>
+					<td>{{u.first_name}}</td>
+					<td>{{u.last_name}}</td>
+					<td>{{u.gender}}</td>
+					<td>{{u.mail_id}}</td>
+					<td>{{u.status}}</td>
+					<td>
+						<button type="button" class="btn btn-success btn-xs" ng-click="ctrl.accept(u.username)">Accepted</button>
+					</td>
+				</div>
+				</tr>
+		    </tbody>
+		  </table>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>
+
+<div ng-controller='UserController'>
+<h2> {{message}} </h2></div>
+
+</body>
+</html>

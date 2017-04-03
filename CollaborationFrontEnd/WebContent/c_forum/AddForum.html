@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+	<center><h2>Add Forum details</h2></center>
+	<form>
+		<div class="panel-group">
+			<div class="panel panel-primary">
+				<div class="panel-heading" style="font-size:18px !important;">Forum Information
+				</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-2">
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>FORUM_TITLE</label>
+									<input type="text" class="form-control" name="forum.forum_title" ng-model="forum.forum_title" placeholder="Enter forum title">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>DESCRIPTION</label>
+									<textarea class="form-control" name="forum.description" ng-model="forum.description" rows="3" id="comment"></textarea>
+								</div>
+							</div>
+							<div class="col-sm-2">
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">
+			</div>
+			<div class="col-sm-3">
+				<button type="button" class="btn btn-success" ng-click="registerForum()">Submit</button>
+				<button type="button" class="btn btn-danger">Cancel</button>
+			</div>
+			<div class="col-sm-4">
+			</div>
+			<br>
+		</div>
+	</form>
+</div>
+<br>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid" ng-controller="EventController as ctrl">
+	<center><h2>Update Event details</h2></center>
+	<form>
+		<div class="panel-group" ng-repeat="event in events" ng-show="currentUser.username==event.username">
+			<div class="panel panel-primary">
+				<div class="panel-heading" style="font-size:18px !important;">Event Information
+				</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-2">
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>NAME</label>
+									<input type="text" class="form-control" name="event.name" value="{{event.name}}" ng-model="event.name">
+								</div>
+								<div class="form-group">
+									<label>DESCRIPTION</label>
+									<textarea class="form-control" name="event.description" value="{{event.description}}"  ng-model="event.description" rows="3" id="comment"></textarea>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label>TIME</label>
+									<input type="text" class="form-control" name="event.time" value="{{event.time}}" ng-model="event.time" placeholder="Enter event time here">
+								</div>
+								<div class="form-group">
+									<label>VENUE</label>
+									<input type="text" class="form-control" name="event.venue" ng-model="event.venue" value="{{event.venue}}" placeholder="Enter event venue here">
+								</div>
+							</div>
+							<div class="col-sm-2">
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">
+			</div>
+			<div class="col-sm-3">
+				<button type="button" class="btn btn-success" ng-click="ctrl.updateEvent()">Update</button>
+				<button type="button" class="btn btn-danger">Cancel</button>
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>
+	</form>
+</div>
+
+</body>
+</html>

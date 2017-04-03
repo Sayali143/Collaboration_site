@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container" ng-controller="BlogController as ctrl">
+  <center><h3>My Blogs</h3></center>
+  <hr>
+	<div class="media" ng-repeat="b in blogs" ng-show="currentUser.username==b.username">
+		<div class="media-left media-middle">
+	  		<img src="lib/images/employee.png" class="media-object" style="width:60px">
+		</div>
+		<div class="media-body">
+	  		<center><h4 class="media-heading">Blog name : {{b.blog_title}}</h4></center>
+	  		<p>
+	  			<b>Date and Time : </b>{{b.date_time}}<br>
+	  			<b>Description : </b>{{b.description}}<br>
+	  			<b>Status : </b>{{b.status}}<br>
+	  			<b>Likes : </b>{{b.likes}}
+			</p>
+		</div>
+		<button type="button" class="btn btn-danger btn-sm pull-right" ng-click="ctrl.deleteBlog(b.blog_id)">Delete</button><br>
+		<hr>
+	</div>  
+</div>
+
+</body>
+</html>

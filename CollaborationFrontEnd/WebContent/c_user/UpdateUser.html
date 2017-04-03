@@ -1,0 +1,71 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<style>
+	.input-design
+	{
+	  padding-top:70px;
+	  border: 0;
+	  font-size:18px;
+	  color:black;
+	  text-align:center;
+	  outline: 0;
+	  background: transparent;
+	  border-bottom: 1px solid #B8B8B8;
+	}
+	</style>
+</head>
+<body>
+<br>
+	<div class="container" ng-controller="UserController as ctrl">
+		<br><br>
+		<form ng-submit="ctrl.updateUser()" name="myForm">
+		<div class="row" style="background:#D0D0D0;border-radius:25px;">
+			<div class="col-sm-3">
+				<img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive">
+				<p style="text-align: center;"><a class="btn btn-default" href="#/upload">Upload Profile Photo?</a></p>
+			</div>
+			<div class="col-sm-9" ng-repeat="user in users" ng-show="currentUser.username==user.username">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="form-group">
+						  <input type="text" class="input-design" id="usr" value="{{user.username}}" ng-bind="ctrl.user.username" >
+						  <center><h4 style="color:white !important;">Username</h4></center>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" class="input-design" id="usr" value="{{user.first_name}}" ng-bind="ctrl.user.first_name" >
+						<center><h4 style="color:white !important;">First Name</h4></center>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" class="input-design" id="usr" value="{{user.last_name}}" ng-bind="ctrl.user.last_name" >
+						<center><h4 style="color:white !important;">Last Name</h4></center>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="form-group">
+						  <input type="text" class="input-design" id="usr" value="{{user.gender}}" ng-bind="ctrl.user.gender" >
+						  <center><h4 style="color:white !important;">Gender</h4></center>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" class="input-design" id="usr" value="{{user.mail_d}}" ng-bind="ctrl.user.mail_id" >
+						<center><h4 style="color:white !important;">Mail id</h4></center>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" class="input-design" id="usr" value="{{user.password}}" ng-bind="ctrl.user.password" >
+						<center><h4 style="color:white !important;">Password</h4></center>
+					</div>
+				</div>
+				<br><br><br>
+			</div>
+			<button type="submit" class="btn btn-primary btn-lg pull-right">Update</button>
+		</div>
+		</form>
+	</div>
+</body>
+</html>

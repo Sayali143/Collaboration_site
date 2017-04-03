@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container" ng-controller="ForumController as ctrl">
+  <center><h3>My Forums</h3></center>
+  <hr>
+	<div class="media" ng-repeat="f in forums" ng-show="currentUser.username==f.username">
+		<div class="media-left media-middle">
+	  		<img src="lib/images/employee.png" class="media-object" style="width:60px">
+		</div>
+		<div class="media-body">
+	  		<center><h4 class="media-heading">Forum name : {{f.forum_title}}</h4></center>
+	  		<p>
+	  			<b>Date and Time : </b>{{f.date_time}}<br>
+	  			<b>Description : </b>{{f.description}}<br>
+	  			<b>Status : </b>{{f.status}}
+			</p>
+		</div>
+		<button type="button" class="btn btn-danger btn-sm pull-right" ng-click="ctrl.deleteForum(f.forum_id)">Delete</button><br>
+		<hr>
+	</div>  
+</div>
+
+</body>
+</html>

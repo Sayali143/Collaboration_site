@@ -1,0 +1,104 @@
+.nav_active
+{
+	background:#d9d9d9 !important;
+}
+.nav_li_name
+{
+	color:white!important;
+}
+.nav_li_name:hover
+{
+	background:#d9d9d9 !important;
+}
+.navbar{
+   margin-bottom:1px !important;
+}
+.slogan
+{		
+	text-align:center;
+}
+.header_top
+{
+	background:#26466D;
+}
+.contactinfo
+{
+	color:white !important;
+}
+.contactinfo:hover
+{
+	background:#26466D !important;
+	color:white !important;
+}
+.social-icons
+{
+	color:white !important;
+}
+#facebook:hover
+{
+	background:#008ae6 !important;
+}
+#twitter:hover
+{
+	background:#00cc99 !important;
+}
+#linkedin:hover
+{
+	background:#ff0000 !important;
+}
+#dribble:hover
+{
+	background:#006600 !important;
+}
+#google:hover
+{
+	background:#ff3300 !important;
+}
+.navbar-color
+{
+	background:white !important;
+	border: 0px solid !important;
+	height:100px !important;
+	padding-top:25px;
+	box-shadow:0px 1px 1px 1px gray;
+	
+} 
+.navbar-color-code
+{
+	color:black !important;
+	font-size:16px !important;
+}
+.navbar-inverse .navbar-nav>.active>a
+{
+	background:white !important;
+	color:#76EE00 !important;
+	font-size:18px !important;
+}
+.footer-font-color
+{
+	color:white;
+	font-size:20px;
+}
+.footer-font-color1
+{
+	font-size:18px;
+	color:white;
+}
+.about-slogan-color
+{
+	color:#5787c3;
+}
+.gmail-color
+{
+	color:white;
+	font-size:14px;
+}
+.gmail-color:hover
+{
+	color:white;
+	font-size:14px;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover
+ {
+	 background-color:white !important;
+ }

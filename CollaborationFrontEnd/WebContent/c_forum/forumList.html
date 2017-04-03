@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<br>
+<div class="container-fluid">
+	
+	<center><h2>Forums</h2>
+ 	<p>Upload what in your mind and forums related to any thing</p><br></center>
+ 	
+ 	<div class="row" ng-repeat="b in forums" ng-if="b.status=='A'">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<div class="jumbotron">
+				<div class="media">
+				    <div class="media-left media-middle">
+				      <img src="lib/images/employee.png" class="media-object" style="width:80px">
+				      <p>{{b.username}}</p>
+				    </div>
+				    <div class="media-body">
+				      <h4 class="media-heading">{{b.forum_title}}</h4>
+				      <p>{{b.description}}</p>
+				    </div>
+				</div>
+				<h4 ng-show="ctrl.getForum(b.forum_id)">Show Reply are below : </h4><br>
+				<div class="row" ng-repeat="f in forumcomments">
+					<div class="col-sm-12">
+						<div class="media">
+						<div class="media-body">
+						 <h4>{{f.forum_comment}}<br>{{f.postdate}}</h4>
+						</div>
+						<div class="media-right">
+						  <img src="lib/images/employee.png" class="media-object" style="width:60px">
+						  <h5>{{f.username}}</h5>
+						</div>
+						<hr>
+					  </div>
+					</div>
+				</div>
+				<div class="row" ng-controller="ForumController as ctrl">
+					<div class="col-sm-12">
+						 <form ng-submit="ctrl.addcomment(b.forum_id)">
+						  <div class="input-group">
+							<input type="text" class="form-control" data-ng-model="forumcomment.forum_comment" placeholder="Type here....">
+							<div class="input-group-btn">
+							  <button class="btn btn-primary" type="submit">
+								<i class="glyphicon glyphicon-send"></i>
+							  </button>
+							</div>
+						  </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+ 	
+</div>
+	<br>	<br>
+<div ng-controller="ForumController as ctrl">
+</body>
+</html>

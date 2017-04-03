@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<br>
+
+<div class="container-fluid" ng-controller="JobController as ctrl">
+  <center><h2>Job Uploaded</h2></center>
+  <div class="row">
+	<div class="col-sm-1">
+	</div>
+	<div class="col-sm-10 table-responsive">
+		<table class="table table-hover">
+			<thead>
+			  <tr>
+				<th>JOB TITLE</th>
+				<th>COMPANY</th>
+				<th>DATE AND TIME</th>
+				<th>DESCRIPTION</th>
+				<th>LOCATION</th>
+				<th>PACKAGE</th>
+				<th>STATUS</th>
+				<th>VANANCY</th>
+				<th>DELETE</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr ng-repeat="j in jobs">
+				<td>{{j.title}}</td>
+				<td>{{j.company}}</td>
+				<td>{{j.date_added}}</td>
+				<td>{{j.description}}</td>
+				<td>{{j.location}}</td>
+				<td>{{j.salary}}</td>
+				<td>{{j.status}}</td>
+				<td>{{j.vacancy}}</td>
+				<td>
+					<button type="button" class="btn btn-danger btn-xs" ng-click="ctrl.deleteJob(j.job_id)">Delete</button>
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
+	</div>
+	<div class="col-sm-1">
+	</div>
+  </div>
+</div>
+
+</body>
+</html>

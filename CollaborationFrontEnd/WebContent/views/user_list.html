@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table border="1">
+	<tr>
+		<th>USERNAME</th>
+		<th>MAIL ID</th>
+		<th>ONLINE </th>
+	</tr>
+	
+	<tr ng-repeat="u in users">
+		<td>{{u.username}}</td>
+		<td>{{u.mail_id}}</td>
+		<td>{{u.status}}</td>
+	</tr>
+</table>
+
+<div ng-controller='UserController'>
+<h2> {{message}} </h2></div>
+
+</body>
+</html>

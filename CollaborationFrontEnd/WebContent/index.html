@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html data-ng-app = "Collaboration">
+<head>
+<meta charset="ISO-8859-1">
+<title>Collaboration Project</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div ng-include src="'views/Navbar.html'"></div>
+
+<div ng-controller="UserController as ctrl">
+
+<div data-ng-view></div>
+</div>
+<!-- <div ng-include src="'views/indexbody.html'"></div> -->
+<div ng-include src="'views/footer.html'"></div>
+</body>
+
+<script src="js/angular.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/angular-cookies.js"></script>
+<script src="js/angular-cookies.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/sockjs.min.js"></script>
+<script src="js/stomp.min.js"></script>
+<script src="js/lodash.min.js"></script>
+
+
+<script src="js/app.js"></script>
+<script src="c_user/UserController.js"></script>
+<script src="c_user/UserService.js"></script>
+<script src="c_job/JobController.js"></script>
+<script src="c_job/ApplyJob.js"></script>
+<script src="c_job/JobService.js"></script>
+<script src="c_blog/BlogController.js"></script>
+<script src="c_blog/BlogService.js"></script>
+<script src="c_friend/FriendController.js"></script>
+<script src="c_friend/FriendService.js"></script>
+<script src="c_event/EventController.js"></script>
+<script src="c_event/EventService.js"></script>
+<script src="c_chat/ChatController.js"></script>
+<script src="c_chat/ChatService.js"></script>
+<script src="c_forum/ForumController.js"></script>
+<script src="c_forum/ForumService.js"></script>
+
+</html>

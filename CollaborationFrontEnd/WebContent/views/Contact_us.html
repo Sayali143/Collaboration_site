@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="navbar.css">
+		<style>
+			#section1
+			{
+				background-image:url(lib/images/contact-bg.jpg);
+				background-position:center center;
+				background-repeat:no-repeat;
+				background-attachment:fixed;
+				background-size:cover;
+				background-color:#464646;
+				color:white;
+				padding-top:70px;
+				padding-left:70px;
+				padding-bottom:70px;
+			}
+			
+			input 
+			{
+			  padding-top:10px;
+			  border: 0;
+			  font-size:18px;
+			  outline: 0;
+			  background: transparent;
+			  border-bottom: 1px solid #B8B8B8;
+			}
+			
+			textarea
+			{
+			  padding-top:10px;
+			  border: 0;
+			  font-size:18px;
+			  outline: 0;
+			  background: transparent;
+			  border-bottom: 1px solid #B8B8B8;
+			}
+		</style>
+		<script>
+$(document).ready(function()
+{
+	$("#textbox").hide();
+    $("#search").click(function(){
+        $("#textbox").show();
+        $("#search").hide();
+    });
+    $("#body").click(function(){
+       $("#search").show();
+	   $("#textbox").hide();
+    });
+});
+</script>
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row" id="section1">
+		<h1 style="font-size:50px !important;font-weight:bold;">Contact Us</h1>
+	</div>
+	<div class="row">
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-5">
+			<h1 style="font-weight:bold;padding-top:10px;font-size:45px !important;"> How to Find Us </h1><br>
+			<p>
+				If you have any questions, just fill in the contact form, <br>and we will answer you shortly. If you are living<br> nearby, come visit Website expert at one of our comfortable<br> offices.
+			</p><br>
+			
+			<h3><b>Headquarters</b></h3><br>
+			<p>
+				9863 - 9867 MILL ROAD, CAMBRIDGE, MG09 99HT.<br>
+				Telephone +1 800 603 6035<br>
+				E-mail : mail@demolink.org
+			</p><br>
+			
+			<h3><b>Support Centre</b></h3><br>
+			<p>
+				9870 ST VINCENT PLACE, GLASGOW, DC 45 FR 45<br>
+				Telephone +1 800 603 6035 <br>
+				E-mail : mail@demolink.org
+			</p>
+			
+		</div>
+		<div class="col-sm-5">
+			<h1 style="font-weight:bold;padding-top:10px;font-size:45px !important;"> Get in Touch</h1><br>
+				<div class="row">
+					<div class="col-sm-6">
+						<input placeholder="Name"></input>
+					</div>
+					<div class="col-sm-6">
+						<input placeholder="Email"></input>
+					</div>
+				</div><br><br>
+				<div class="row">
+					<div class="col-sm-12">
+						<textarea rows="9" cols="55" placeholder="Message"></textarea>
+					</div>
+				</div><br>
+				<button type="button" class="btn btn-success btn-lg" style="height:52px !important;width:350px !important;">Send</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-default btn-lg" style="height:52px !important;width:160px !important;">Cancel</button>
+		</div>
+		<div class="col-sm-1">
+		</div>
+	</div>	
+</div>
+	</body>
+</html>

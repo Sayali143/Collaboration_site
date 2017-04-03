@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+	.job-label
+	{
+		color:red;
+	}
+	.company-heading
+	{
+		font-size:18px !important;
+	}
+</style>
+</head>
+<body>
+<center><h2>Add Job here</h2></center>
+<div class="container-fluid" ng-controller="JobController as ctrl">
+	<form  ng-submit="ctrl.addJob()">
+		<div class="row">
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="panel-group">
+				<div class="panel panel-primary">
+				  <div class="panel-heading company-heading">Company Information</div>
+				  <div class="panel-body">
+						<div class="row">
+							<div class="col-sm-1">
+							</div>
+							<div class="col-sm-5">
+								<div class="form-group">
+									<label class="job-label">COMPANY:</label>
+									<input type="text" class="form-control" name="job.company" ng-model="job.company" placeholder="Enter your company name">
+								</div>
+								<div class="form-group">
+									<label class="job-label">DESCRIPTION:</label>
+									<input type="text" class="form-control" name="job.description" ng-model="job.description" placeholder="Enter job description">
+								</div>
+							</div>
+							<div class="col-sm-5">
+								<div class="form-group">
+									<label class="job-label">LOCATION:</label>
+									<input type="text" class="form-control" name="job.location" ng-model="job.location" placeholder="Enter job location here">
+								</div>
+								<div class="form-group">
+									<label class="job-label">POSITION:</label>
+									<input type="text" class="form-control" name="job.position" ng-model="job.position" placeholder="Enter job position here">
+								</div>
+							</div>
+							<div class="col-sm-1">
+							</div>
+						</div>
+				  </div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-sm-1">
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1">
+			</div>
+			<div class="col-sm-10">
+				
+				<div class="panel-group">
+					<div class="panel panel-primary">
+					  <div class="panel-heading company-heading">Qualification Information</div>
+					  <div class="panel-body">
+							<div class="row">
+								<div class="col-sm-1">
+								</div>
+								<div class="col-sm-5">
+									<div class="form-group">
+										<label class="job-label">10TH MARKS(SSC):</label>
+										<input type="number" class="form-control" name="job.q_10" ng-model="job.q_10" placeholder="Enter SSC marks here">
+									</div>
+									
+									<div class="form-group">
+										<label class="job-label">GRADUATION MARKS:</label>
+										<input type="number" class="form-control" name="job.q_ug" ng-model="job.q_ug" placeholder="Enter graduation marks here">
+									</div>
+								</div>
+								<div class="col-sm-5">
+									<div class="form-group">
+										<label class="job-label">12TH MARKS(HSC)</label>
+										<input type="number" class="form-control" name="job.q_12" ng-model="job.q_12" placeholder="Enter HSC marks here">
+									</div>
+								</div>
+								<div class="col-sm-1">
+								</div>
+							</div>
+					  </div>
+					</div>
+				</div>
+					
+			</div>
+			<div class="col-sm-1">
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-1">
+			</div>
+			<div class="col-sm-10">
+				
+				<div class="panel-group">
+					<div class="panel panel-primary">
+					  <div class="panel-heading company-heading">Other Information</div>
+					  <div class="panel-body">
+							<div class="row">
+								<div class="col-sm-1">
+								</div>
+								<div class="col-sm-5">
+									<div class="form-group">
+										<label class="job-label">PACKAGE:</label>
+										<input type="number" class="form-control" name="job.salary" ng-model="job.salary" placeholder="Enter package here">
+									</div>
+									
+									<div class="form-group">
+										<label class="job-label">TITLE:</label>
+										<input type="text" class="form-control" name="job.title" ng-model="job.title" placeholder="Enter title here">
+									</div>
+								</div>
+								<div class="col-sm-5">
+									<div class="form-group">
+										<label class="job-label">VACANCY</label>
+										<input type="number" class="form-control" name="job.vacancy" ng-model="job.vacancy" placeholder="Enter vacancy here">
+									</div>
+								</div>
+								<div class="col-sm-1">
+								</div>
+							</div>
+					  </div>
+					</div>
+				</div>
+					
+			</div>
+			<div class="col-sm-1">
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-9">
+			</div>
+			<div class="col-sm-2">
+				<button type="submit" class="btn btn-success">Create Job</button>
+				<button type="button" class="btn btn-danger">Cancel</button>
+			</div>
+			<div class="col-sm-1">
+			</div>
+		</div>
+		<br><br>
+	</form>
+</div>
+
+
+</body>
+</html>

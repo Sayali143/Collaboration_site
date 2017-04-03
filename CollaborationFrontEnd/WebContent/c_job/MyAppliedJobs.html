@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<br>
+
+<div class="container-fluid">
+	<div ng-controller="ApplyJob as ctrl">
+	<center><h1>My Applied Jobs</h1></center>
+		<div ng-repeat="uj in applyjobs">
+				<div class="panel-group">
+					    <div class="panel panel-default">
+					      <div class="panel-heading">Username : {{uj.username}}</div>
+					      <div class="panel-body">
+					      	<div class="row">
+					      		<div class="col-sm-6">
+					      			<b>Date : </b>{{uj.date_time}}<br>
+									<b>Job : </b>{{uj.job_id}}
+					      		</div>
+					      	</div>
+					      </div>
+					    </div>
+					 </div>
+			</div>
+	</div>
+</div>
+</body>
+</html>

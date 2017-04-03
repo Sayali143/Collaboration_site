@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<br><br>
+<div class="container-fluid">
+	<div class="row" ng-controller="EventController as ctrl">
+		<div class="col-sm-2">
+		</div>
+		<div class="col-sm-8 table-responsive">
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      	<th>NAME</th>
+					<th>DESCRIPTION</th>
+					<th>TIME</th>
+					<th>VENUE</th>
+					<th>DELETE</th>
+					<th>UPDATE</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<tr ng-repeat="event in events" ng-show="currentUser.username==event.username">
+						<td>{{event.name}}</td>
+						<td>{{event.description}}</td>
+						<td>{{event.time}}</td>
+						<td>{{event.venue}}</td>
+						<td> <button type="button" class="btn btn-danger" ng-click="ctrl.deleteEvent(event.id)"> Delete </button> </td>
+						<td> <a href="#/UpdateEvent" class="btn btn-primary" role="button">Update</a> </td>
+				</tr>
+			  </tbody>
+			</table>
+		</div>
+		<div class="col-sm-2">
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

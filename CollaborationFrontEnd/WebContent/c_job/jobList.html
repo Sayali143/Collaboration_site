@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<br>
+<div class="container" ng-controller="JobController as ctrl">
+	<div class="row">
+	 <center><h2>Jobs List</h2>
+	  <p><b>Tip:</b> Please apply for job you full fill their required</p></center> 
+	  <hr>
+	  <!-- Left-aligned media object -->
+	  <div class="media" ng-repeat="j in jobs">
+	    <div class="media-left">
+	      <img src="lib/images/employee.png" class="media-object" style="width:60px">
+	    </div>
+	    <div class="media-body">
+	      <h4 class="media-heading">{{j.company}} and {{j.position}}</h4>
+	      <p>
+	      	<div class="row">
+	      		<div class="col-sm-6">
+	      			<b>Description : </b>{{j.description}}<br>
+					<b>Location : </b>{{j.location}}
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<b>package : </b>{{j.salary}} <br>
+	      			<b>Vacancy : </b>{{j.vacancy}}<br>
+					<b>Qualification : </b>
+					{{j.q_10}} {{j.q_12}} {{j.q_ug}}
+	      		</div>
+	      	</div>
+		  </p>
+	    </div><br>
+	    <button type="button" class="btn btn-primary btn-xs" ng-click="ctrl.applyJob(j.job_id)" ng-hide="currentUser.username==undefined">Apply for job</button>
+	    <hr>
+	  </div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+	.show_date
+	{
+		border-bottom:5px solid red;
+		border-bottom-width:3px;
+		width:50% !important;
+	}
+	.event_name
+	{
+		font-weight:bold;
+	}
+	.event_date_show
+	{
+		color:red;
+	}
+</style>
+</head>
+<body>
+<br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-10">
+			<div class="panel panel-default" style="box-shadow:1px 5px 5px 1px gray;">
+		      <div class="panel-heading" style="background:black !important;color:white !important;text-align:center !important;font-size:25px !important;">Events</div>
+		      <div class="panel-body"> 
+		      		<div class="row" ng-repeat="e in events | orderBy:event_date">
+						<div class="col-sm-2">
+							<h4 class="show_date">On date:<br>{{e.on_date}}</h4>
+						</div>
+						<div class="col-sm-9">
+							<h3 class="event_name">{{e.name}}</h3>
+							<h6 class="event_date_show">{{e.on_date}}</h6><br>
+							<h4>{{e.description}} <br>
+								{{e.venue}} {{e.time}}
+							</h4>
+							<h6 class="event_date_show pull-right">Event uploaded date:{{e.event_date}}</h6>
+						</div>
+						<!-- <div class="col-sm-1">
+							<h4 class="show_date"></h4>
+						</div> -->
+						<div class="col-sm-1"></div>
+						<p style="border-bottom:1px solid #E0E0E0 ;"></p>
+					</div>
+					<div class="row">
+						
+					</div>
+			  </div>
+		    </div>
+		</div>
+		<div class="col-sm-1">
+		</div>
+	</div>
+</div>
+
+<div ng-controller='EventController'>
+
+</body>
+</html>
+
+		<!-- <div class="col-sm-2">
+		</div>
+		<div class="col-sm-8 table-responsive">
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      	<th>NAME</th>
+					<th>DESCRIPTION</th>
+					<th>TIME</th>
+					<th>VENUE</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr ">
+					<td></td>
+					<td></td>
+					<td>{{e.time}}</td>
+					<td>{{e.venue}}</td>
+				</tr>
+			  </tbody>
+			</table>
+		</div>
+		<div class="col-sm-2">
+		</div> -->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div ng-controller="BlogController as ctrl">
+<br>
+<div class="container-fluid">
+	
+	<center><h2>Blogs</h2>
+ 	<p>Upload what in your mind and blogs related to any thing</p><br></center>
+ 	
+ 	<div class="container" ng-repeat="b in blogs" ng-show="b.status=='A'"> 
+ 		<div class="row" style="padding-top:50px !important;">
+			<div class="col-sm-1">
+			</div>
+			<div class="col-sm-2">
+				 <center><img src="lib/images/employee.png" class="img-circle" alt="Cinque Terre" width="90" height="90"><br>
+				 <h4>{{b.username}}</h4></center>
+			</div>
+			<div class="col-sm-8" style="padding-left:60px !important;">
+				<h1>{{b.blog_title}}</h1>
+				<h5> {{b.description}} </h5>
+				<hr>
+				<div class="row">
+					<div class="col-sm-6">
+						<h5 style="color:rgb(159, 159, 159);"><i class="fa fa-calendar" aria-hidden="true" style="color:black !important;"></i> {{b.date_time}}</h5>
+					</div>
+					<div class="col-sm-3">
+						<a href="#" class="btn btn-default" role="button" ng-hide="currentUser.username==undefined" ng-click="ctrl.likeclick(b.blog_id)" style="border:none !important;"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true" style="color:rgb(159, 159, 159);"><span class="badge">{{b.likes}}</span></i></a> </h5>
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+			</div>
+			<div class="col-sm-1">
+			</div>
+		</div>
+	</div>
+<br><br>
+</div>
+</body>
+</html>

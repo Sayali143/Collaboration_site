@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/navbar.css">
+
+</head>
+<body>
+<div ng-controller="UserController as ctrl">
+<div class="header_top"><!--header_top-->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5">
+				<ul class="nav nav-pills">
+						<li><a href="#" class="contactinfo"><i class="fa fa-phone"></i> +91 91 58 48 74 44</a></li>
+						<li><a href="#" class="contactinfo"><i class="fa fa-envelope"></i>Collaboration@gmail.com</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-7">
+				<div class="social-icons pull-right">
+					<ul class="nav navbar-nav">
+						<li><a href="https://www.facebook.com/" class="social-icons" id="facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/" class="social-icons" id="twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://www.linkedin.com/" class="social-icons" id="linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://plus.google.com/" class="social-icons" id="google"><i class="fa fa-google-plus"></i></a></li>
+						<li ng-hide="currentUser.username"><a href="#/register" class="contactinfo"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li ng-hide="currentUser.username"><a href="#/login" class="contactinfo"><span class="glyphicon glyphicon-log-in"></span> Log-in</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<nav class="navbar navbar-inverse navbar-color">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background:#26466D !important;">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand navbar-color-code" href="#">Collaboration webSite</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav" style="font-family:Lucida Console !important;">
+        <li class="active"><a href="#/home" class="navbar-color-code">Home</a></li>
+		<li><a href="#/Contact_us" class="navbar-color-code">Contact Us</a></li>
+		
+		<li class="dropdown" ng-show="currentUser.role=='Admin'">
+			<a class="dropdown-toggle  navbar-color-code" data-toggle="dropdown" href="#">User
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#/viewUsers">View Users</a></li>
+			  <li><a href="#/acceptUser">view Accepted Users</a></li>
+			  <li><a href="#/rejectUser">view Rejected Users</a></li>
+			</ul>
+		</li>
+		
+		<li class="dropdown">
+			<a class="dropdown-toggle  navbar-color-code" data-toggle="dropdown" href="#">Job
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li ng-show="currentUser.username " ng-hide="currentUser.role=='Admin'"><a href="#/viewJobs">Jobs List</a></li>
+			  <li ng-show="currentUser.role=='user'" ng-hide="currentUser.username==undefined"><a href="#/MyAppliedJobs">My Applied Jobs</a></li>
+			  <li ng-show="currentUser.role=='Admin'"><a href="#/AddJob">Add Job</a></li>
+			  <li ng-show="currentUser.role=='Admin'"><a href="#/AdminJobList">List of Jobs</a></li>
+			</ul>
+		</li>
+		
+		<li class="dropdown">
+			<a class="dropdown-toggle  navbar-color-code" data-toggle="dropdown" href="#">Blog
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#/viewAdminBlogs" ng-show="currentUser.role=='Admin'">Blog request list</a></li>
+			  <li ng-show="currentUser.username" ng-hide="currentUser.role=='Admin'"><a href="#/viewBlogs">Blogs List</a></li>
+			  <li ng-show="currentUser.role=='user'" ng-hide="currentUser.username==undefined"><a href="#/MyBlog">My Blogs</a></li>
+			  <li ng-show="currentUser.role=='user'" ng-hide="currentUser.username==undefined"><a href="#/AddBlog">Add Blog</a></li>
+			</ul>
+		</li>
+		
+		<li class="dropdown" ng-show="currentUser.role=='user'" ng-hide="currentUser.username==undefined">
+			<a class="dropdown-toggle  navbar-color-code" data-toggle="dropdown" href="#">Friend
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#/viewFriend">My friends</a></li>
+			  <li><a href="#/viewSearchFriend">Suggestions For friends</a></li>
+			  <li><a href="#/viewFriendRequest">Requests</a></li>
+			  <!-- <li><a href="#/SendByMe">Request send by me</a></li> -->
+			</ul>
+		</li>
+		
+		<li class="dropdown" ng-hide="currentUser.role=='Admin'">
+			<a class="dropdown-toggle  navbar-color-code" data-toggle="dropdown" href="#">Event
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#/viewEvents">Events</a></li>
+			  <li ng-show="currentUser.role=='user'" ng-hide="currentUser.username==undefined"><a href="#/AddEvent">Add Event</a></li>
+			  <li ng-show="currentUser.role=='user'" ng-hide="currentUser.username==undefined"><a href="#/MyEvent">My Events</a></li>
+			</ul>
+		</li>
+		
+		<li class="dropdown">
+			<a class="dropdown-toggle  navbar-color-code" data-toggle="dropdown" href="#">Forum
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li ng-show="currentUser.role=='Admin'"><a href="#/viewAdminForums">Add forum request</a></li>
+			  <li ng-show="currentUser.username" ng-hide="currentUser.role=='Admin'"><a href="#/viewForums">Forum List</a></li>
+			  <li ng-show="currentUser.role=='user'" ng-hide="currentUser.username==undefined"><a href="#/MyForum">My Forums</a></li>
+			  <li ng-show="currentUser.role=='user'" ng-hide="currentUser.username==undefined"><a href="#/AddForum">Add Forum</a></li>
+			</ul>
+		</li>
+		
+      </ul>
+	  <ul class="nav navbar-nav navbar-right" data-ng-show="currentUser.username" ng-hide="currentUser.username==undefined">
+		<li class="dropdown">
+			<a class="dropdown-toggle navbar-color-code" data-toggle="dropdown" href="#">Welcome:{{currentUser.username}}
+			<span class="caret navbar-color-code"></span></a>
+				<ul class="dropdown-menu">
+				  <li><a href="#/MyProfile">My Profile</a></li>
+				  <!-- <li><a ng-click ="ctrl.logout()" ><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li> -->
+				   <li><a href="#/" data-ng-click="ctrl.logout()">Logout</a></li>
+				</ul>
+		</li>
+	  </ul>
+    </div>
+  </div>
+</nav>
+</div>
+</body>
+</html>

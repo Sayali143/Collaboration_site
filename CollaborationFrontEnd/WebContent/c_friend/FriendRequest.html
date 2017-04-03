@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div ng-controller="FriendController as ctrl">
+	<div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2">
+				</div>
+				<div class="col-sm-8 table-responsive">
+					<div ng-if="getMyFriendRequests != null">
+					<table class="table table-striped">
+					  <thead>
+					    <tr>
+					      	<th>Friend name</th>
+							<th>Accept friend request</th>
+							<th>Reject friend request</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+		   					<tr ng-repeat="f in ctrl.getMyFriendRequests">
+		   							<td>{{f.friendid}}</td>
+									<td><button class="btn btn-primary" ng-click="ctrl.acceptFriend(f.friendid)">Accept</button></td>
+									<td><button class="btn btn-danger" ng-click="ctrl.rejectFriend(f.friendid)">Reject</button></td>
+							</tr>
+					  </tbody>
+					</table>
+				</div>
+				<div ng-else>
+					<h2>You have no pending friend requests.</h2>
+				</div>
+				<div class="col-sm-2">
+				</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>             
+</body>
+</html>
